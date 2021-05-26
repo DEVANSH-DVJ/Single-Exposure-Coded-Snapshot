@@ -31,8 +31,11 @@ We evaluated the reconstructed results by computing RMSE (Relative Mean Square E
 |  `cars.avi` | 0.011258 | 0.019089 | 0.031666 |
 | `flame.avi` | 0.000670 | 0.001110 | 0.002925 |
 
-Experiment Setup | Coded Snapshot | Reconstructed (left) Original (Right)
+Experiment Setup | Coded Snapshot | Reconstructed (left) Original (right)
 --- | --- | ---
 `cars.avi`, T = 3 | ![](results/cars_3_coded_snapshot.jpg "Coded Snapshot for cars with T=3") | ![](results/cars_3.gif "Reconstructed")
 `cars.avi`, T = 5 | ![](results/cars_5_coded_snapshot.jpg "Coded Snapshot for cars with T=3") | ![](results/cars_5.gif "Reconstructed")
 `cars.avi`, T = 7 | ![](results/cars_7_coded_snapshot.jpg "Coded Snapshot for cars with T=3") | ![](results/cars_7.gif "Reconstructed")
+`flame.avi`, T = 3 | ![](results/flame_3_coded_snapshot.jpg "Coded Snapshot for flame with T=3") | ![](results/flame_3.gif "Reconstructed")
+`flame.avi`, T = 5 | ![](results/flame_5_coded_snapshot.jpg "Coded Snapshot for flame with T=3") | ![](results/flame_5.gif "Reconstructed")
+`flame.avi`, T = 7 | ![](results/flame_7_coded_snapshot.jpg "Coded Snapshot for flame with T=3") | ![](results/flame_7.gif "Reconstructed")
