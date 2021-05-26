@@ -43,4 +43,4 @@ Experiment Setup | Coded Snapshot | Reconstructed (left) Original (right)
 
 ---
 
-*(This project was made as [Assignment 1](https://github.com/devansh-dvj/CS754-Assignment-1) for [CS 754: Advanced Image Processing, Spring 2021](https://www.cse.iitb.ac.in/~ajitvr/CS754_Spring2021/), [IIT Bombay](https://www.iitb.ac.in/).)*
+*(This project was made as a part of [Assignment 1](https://github.com/devansh-dvj/CS754-Assignment-1) for [CS 754: Advanced Image Processing, Spring 2021](https://www.cse.iitb.ac.in/~ajitvr/CS754_Spring2021/), [IIT Bombay](https://www.iitb.ac.in/).)*
