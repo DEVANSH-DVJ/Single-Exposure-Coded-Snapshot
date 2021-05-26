@@ -33,4 +33,6 @@ We evaluated the reconstructed results by computing RMSE (Relative Mean Square E
 
 Experiment Setup | Coded Snapshot | Reconstructed (left) Original (Right)
 --- | --- | ---
-`cars.avi` with T = 3 | ![](results/cars_3_coded_snapshot.jpg "Coded Snapshot for cars with T=3") | ![](results/cars_3.gif "Reconstructed")
+`cars.avi`, T = 3 | ![](results/cars_3_coded_snapshot.jpg "Coded Snapshot for cars with T=3") | ![](results/cars_3.gif "Reconstructed")
+`cars.avi`, T = 5 | ![](results/cars_5_coded_snapshot.jpg "Coded Snapshot for cars with T=3") | ![](results/cars_5.gif "Reconstructed")
+`cars.avi`, T = 7 | ![](results/cars_7_coded_snapshot.jpg "Coded Snapshot for cars with T=3") | ![](results/cars_7.gif "Reconstructed")
