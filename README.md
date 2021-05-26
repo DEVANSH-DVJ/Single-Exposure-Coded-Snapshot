@@ -24,6 +24,7 @@ Execute `main.m` in MATLAB to reproduce the results. You can adjust the paramete
 ## Results
 
 We used two test videos - `cars.avi` and `flame.avi` present in `data/`.  
+The coded snapshot was corrupted with Additive Gaussian Noise with standard deviation 2.  
 We evaluated the reconstructed results by computing RMSE (Relative Mean Square Error) w.r.t. original video.
 
 |    Video    |   T = 3  |   T = 5  |   T = 7  |
@@ -33,9 +34,9 @@ We evaluated the reconstructed results by computing RMSE (Relative Mean Square E
 
 Experiment Setup | Coded Snapshot | Reconstructed (left) Original (right)
 --- | --- | ---
-`cars.avi`, T = 3 | ![](results/cars_3_coded_snapshot.jpg "Coded Snapshot for cars with T=3") | ![](results/cars_3.gif "Reconstructed")
-`cars.avi`, T = 5 | ![](results/cars_5_coded_snapshot.jpg "Coded Snapshot for cars with T=3") | ![](results/cars_5.gif "Reconstructed")
-`cars.avi`, T = 7 | ![](results/cars_7_coded_snapshot.jpg "Coded Snapshot for cars with T=3") | ![](results/cars_7.gif "Reconstructed")
-`flame.avi`, T = 3 | ![](results/flame_3_coded_snapshot.jpg "Coded Snapshot for flame with T=3") | ![](results/flame_3.gif "Reconstructed")
-`flame.avi`, T = 5 | ![](results/flame_5_coded_snapshot.jpg "Coded Snapshot for flame with T=3") | ![](results/flame_5.gif "Reconstructed")
-`flame.avi`, T = 7 | ![](results/flame_7_coded_snapshot.jpg "Coded Snapshot for flame with T=3") | ![](results/flame_7.gif "Reconstructed")
+`cars.avi` with T = 3 | ![Coded Snapshot](results/cars_3_coded_snapshot.jpg "Coded Snapshot") | ![Reconstructed (left) Original (right)](results/cars_3.gif "Reconstructed (left) Original (right)")
+`cars.avi` with T = 5 | ![Coded Snapshot](results/cars_5_coded_snapshot.jpg "Coded Snapshot") | ![Reconstructed (left) Original (right)](results/cars_5.gif "Reconstructed (left) Original (right)")
+`cars.avi` with T = 7 | ![Coded Snapshot](results/cars_7_coded_snapshot.jpg "Coded Snapshot") | ![Reconstructed (left) Original (right)](results/cars_7.gif "Reconstructed (left) Original (right)")
+`flame.avi` with T = 3 | ![Coded Snapshot](results/flame_3_coded_snapshot.jpg "Coded Snapshot") | ![Reconstructed (left) Original (right)](results/flame_3.gif "Reconstructed (left) Original (right)")
+`flame.avi` with T = 5 | ![Coded Snapshot](results/flame_5_coded_snapshot.jpg "Coded Snapshot") | ![Reconstructed (left) Original (right)](results/flame_5.gif "Reconstructed (left) Original (right)")
+`flame.avi` with T = 7 | ![Coded Snapshot](results/flame_7_coded_snapshot.jpg "Coded Snapshot") | ![Reconstructed (left) Original (right)](results/flame_7.gif "Reconstructed (left) Original (right)")
