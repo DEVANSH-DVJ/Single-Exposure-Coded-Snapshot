@@ -1,11 +1,11 @@
 
 function theta = omp(A, y, e)
     % Input:
-    %   A : overcomplete dictionary
-    %   y : signal
-    %   e : error bound
+    %   A : Overcomplete dictionary
+    %   y : Signal
+    %   e : Error bound
     % Output:
-    %   theta : sparse coefficients
+    %   theta : Sparse coefficients
     % Brief:
     %   Orthogonal Matching Pursuit for solving y = A*theta where theta is sparse
 
