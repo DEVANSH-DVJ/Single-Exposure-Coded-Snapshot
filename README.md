@@ -4,7 +4,7 @@ Implemented Video compressive sensing architecture from the paper on [single sho
 Name of the paper: Video from a Single Coded Exposure Photograph using a Learned Over-Complete Dictionary  
 Link to paper: https://www.cs.columbia.edu/CAVE/publications/pdfs/Hitomi_ICCV2011.pdf
 
-## Abstract about Coded Snapshot
+## Coded Snapshot
 
 The aim is to get higher temporal gains in video acquisition without a significant loss in spatial resolution.  
 The Single Exposure image is a coded superposition (summation) of T sub-frames within a unit integration time of the video camera.  
@@ -40,3 +40,7 @@ Experiment Setup | Coded Snapshot | Reconstructed (left) Original (right)
 `flame.avi` with T = 3 | ![Coded Snapshot](results/flame_3_coded_snapshot.jpg "Coded Snapshot") | ![Reconstructed (left) Original (right)](results/flame_3.gif "Reconstructed (left) Original (right)")
 `flame.avi` with T = 5 | ![Coded Snapshot](results/flame_5_coded_snapshot.jpg "Coded Snapshot") | ![Reconstructed (left) Original (right)](results/flame_5.gif "Reconstructed (left) Original (right)")
 `flame.avi` with T = 7 | ![Coded Snapshot](results/flame_7_coded_snapshot.jpg "Coded Snapshot") | ![Reconstructed (left) Original (right)](results/flame_7.gif "Reconstructed (left) Original (right)")
+
+---
+
+*(This project was made as [Assignment 1](https://github.com/devansh-dvj/CS754-Assignment-1) for [CS 754: Advanced Image Processing, Spring 2021](https://www.cse.iitb.ac.in/~ajitvr/CS754_Spring2021/), [IIT Bombay](https://www.iitb.ac.in/).)*
