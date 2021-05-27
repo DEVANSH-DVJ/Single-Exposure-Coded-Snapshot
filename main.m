@@ -91,11 +91,12 @@ for i=1:H-ps+1
     end
 end
 
-%% Save the result and Compute RMSE (Relative Mean Squared Error)
+%% Normalize the reconstructed frames
 R = R ./ avg_mat;
 R = cast(R, 'uint8');
 F = cast(F, 'uint8');
 
+%% Save the result and Compute RMSE (Relative Mean Squared Error)
 % For every frame
 for i=1:T
     % Get the final reconstructed frame
