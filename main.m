@@ -30,7 +30,7 @@ T = 3;
 % T = 7;
 
 %% Constants
-% Set the Height and Width each frame
+% Set the Height and Width of each frame
 H = x_max - x_min + 1;
 W = y_max - y_min + 1;
 % Set standard deviation of Gaussian Noise
@@ -51,14 +51,14 @@ C = randi([0, 1], H, W, T, 'double');
 E = sum(C.*F, 3) + noise_std*randn(H,W);
 
 %% Save the single exposure coded snapshot - this is the output of the camera
-imwrite(cast(E/T, 'uint8'), sprintf('results/%s_%i_coded_snapshot.jpg',name,T));
+imwrite(cast(E/T, 'uint8'), sprintf('results/%s_%i_coded_snapshot.jpg', name, T));
 
 %% Reconstruction of the frames
-% Define the orthonormal matrix in which each frame is sparse - here, 2D-DCT
+% Define the orthonormal matrix in which the patches are sparse - here, 2D-DCT
 D1 = dctmtx(ps);
 psi = kron(D1', D1');
 
-% Initialize reconstruction frames
+% Initialize reconstruction frames and averaging matrix
 R = zeros(H, W, T, 'double');
 avg_mat = zeros(H, W, 'double');
 
@@ -67,7 +67,7 @@ tic;
 for i=1:H-ps+1
     for j=1:W-ps+1
         % Get the coded snapshot for the patch
-        y = reshape(E(i:i+ps-1,j:j+ps-1), [ps*ps 1]);
+        y = reshape(E(i:i+ps-1, j:j+ps-1), [ps*ps 1]);
 
         % Construct phi from C and psi as sensing matrix w.r.t. DCT coefficients
         phi = zeros(ps*ps, ps*ps*T, 'double');
@@ -87,7 +87,7 @@ for i=1:H-ps+1
         avg_mat(i:i+ps-1, j:j+ps-1) = avg_mat(i:i+ps-1, j:j+ps-1) + ones(ps, ps);
 
         % Print the co-ordinates of the patch, to check for speed and debugging
-        fprintf('(%i, %i)\n',i,j);
+        fprintf('(%i, %i)\n', i, j);
     end
 end
 
@@ -99,19 +99,17 @@ F = cast(F, 'uint8');
 %% Save the result and Compute RMSE (Relative Mean Squared Error)
 % For every frame
 for i=1:T
-    % Get the final reconstructed frame
-%     R(:,:,i) = R(:,:,i)./avg_mat(:,:);
     % Display and Save the reconstructed frame
     figure;
     imshow([R(:,:,i), F(:,:,i)]);
-    imwrite([R(:,:,i), F(:,:,i)], sprintf('results/%s_%i_%i.png',name,T,i));
+    imwrite([R(:,:,i), F(:,:,i)], sprintf('results/%s_%i_%i.png', name, T, i));
     % RMSE of the frame
     fprintf('RMSE for frame %i : %f\n', i, ...
-        (norm(double(R(:,:,i) - F(:,:,i)), 'fro')^2 / norm(double(F(:,:,i)), 'fro')^2));
+        (norm(double(R(:,:,i)) - double(F(:,:,i)), 'fro')^2 / norm(double(F(:,:,i)), 'fro')^2));
 end
 % RMSE of the entire video
 fprintf('RMSE of video sequence : %f\n', ...
-    (norm(double(reshape(R(:,:,:) - F(:,:,:), [H*W*T 1])))^2 / norm(double(reshape(F(:,:,:), [H*W*T 1])))^2));
+    (norm(reshape(double(R) - double(F), [H*W*T 1]))^2 / norm(reshape(double(F), [H*W*T 1]))^2));
 
 % Evaluate the time taken
 toc;
