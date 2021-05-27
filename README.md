@@ -1,4 +1,4 @@
-# Single-Exposure-Coded-Snapshot
+# Single Exposure Coded Snapshot
 
 Implemented Video compressive sensing architecture from the paper on [single shot video](https://www.cs.columbia.edu/CAVE/projects/single_shot_video/) published in ICCV 2011  
 Title: "Video from a Single Coded Exposure Photograph using a Learned Over-Complete Dictionary"  
@@ -19,7 +19,8 @@ We use Orthogonal Matching Pursuit (OMP) to solve for **Theta** given **I** and 
 Code for OMP is present in form of a function in `omp.m`  
 Code for Experiments is present in form of a function in `main.m`
 
-Execute `main.m` in MATLAB to reproduce the results. You can adjust the parameters like video file and number of frames (T) in `main.m`.
+Execute `main.m` in MATLAB to reproduce the results. You can adjust the parameters like video file and number of frames (T) in `main.m`.  
+The code is tested on MATLAB 2020b, but should work on other versions of MATLAB with no or little changes.
 
 ## Results
 
