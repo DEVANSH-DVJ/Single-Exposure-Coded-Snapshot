@@ -17,7 +17,7 @@ function theta = omp(A, y, e)
     i = 0;              % iteration
     A_omega = [];       % Sub-matrix of A containing columns which lie in the support set
 
-    %% Iteratively converging
+    %% Iteratively converge
     while(i < N && norm(r)^2 > e)
         i = i + 1;
         x_tmp = zeros(K,1);

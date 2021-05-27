@@ -92,21 +92,25 @@ for i=1:H-ps+1
 end
 
 %% Save the result and Compute RMSE (Relative Mean Squared Error)
+R = R ./ avg_mat;
+R = cast(R, 'uint8');
+F = cast(F, 'uint8');
+
 % For every frame
 for i=1:T
     % Get the final reconstructed frame
-    R(:,:,i) = R(:,:,i)./avg_mat(:,:);
+%     R(:,:,i) = R(:,:,i)./avg_mat(:,:);
     % Display and Save the reconstructed frame
     figure;
-    imshow(cast([R(:,:,i), F(:,:,i)], 'uint8'));
-    imwrite(cast([R(:,:,i), F(:,:,i)], 'uint8'), sprintf('results/%s_%i_%i.png',name,T,i));
+    imshow([R(:,:,i), F(:,:,i)]);
+    imwrite([R(:,:,i), F(:,:,i)], sprintf('results/%s_%i_%i.png',name,T,i));
     % RMSE of the frame
     fprintf('RMSE for frame %i : %f\n', i, ...
-        (norm(R(:,:,i) - F(:,:,i), 'fro')^2 / norm(F(:,:,i), 'fro')^2));
+        (norm(double(R(:,:,i) - F(:,:,i)), 'fro')^2 / norm(double(F(:,:,i)), 'fro')^2));
 end
 % RMSE of the entire video
 fprintf('RMSE of video sequence : %f\n', ...
-    (norm(reshape(R(:,:,:) - F(:,:,:), [H*W*T 1]))^2 / norm(reshape(F(:,:,:), [H*W*T 1]))^2));
+    (norm(double(reshape(R(:,:,:) - F(:,:,:), [H*W*T 1])))^2 / norm(double(reshape(F(:,:,:), [H*W*T 1])))^2));
 
 % Evaluate the time taken
 toc;
