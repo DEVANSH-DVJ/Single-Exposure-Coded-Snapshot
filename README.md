@@ -30,8 +30,8 @@ We evaluated the reconstructed results by computing RMSE (Relative Mean Square E
 
 |    Video    |   T = 3  |   T = 5  |   T = 7  |
 | ----------- | -------- | -------- | -------- |
-|  `cars.avi` | 0.005335 | 0.008506 | 0.013294 |
-| `flame.avi` | 0.000305 | 0.000482 | 0.001116 |
+|  `cars.avi` | 0.011234 | 0.019060 | 0.031301 |
+| `flame.avi` | 0.000672 | 0.001103 | 0.002832 |
 
 Experiment Setup | Coded Snapshot | Reconstructed (left) Original (right)
 --- | --- | ---
