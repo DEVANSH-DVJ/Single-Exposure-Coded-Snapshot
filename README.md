@@ -1,12 +1,12 @@
 # Single-Exposure-Coded-Snapshot
 
 Implemented Video compressive sensing architecture from the paper on [single shot video](https://www.cs.columbia.edu/CAVE/projects/single_shot_video/) published in ICCV 2011  
-Name of the paper: Video from a Single Coded Exposure Photograph using a Learned Over-Complete Dictionary  
+Title: "Video from a Single Coded Exposure Photograph using a Learned Over-Complete Dictionary"  
 Link to paper: https://www.cs.columbia.edu/CAVE/publications/pdfs/Hitomi_ICCV2011.pdf
 
 ## Coded Snapshot
 
-The aim is to get higher temporal gains in video acquisition without a significant loss in spatial resolution.  
+The aim is to get **higher temporal gains** in video acquisition without a significant loss in spatial resolution.  
 The Single Exposure image is a coded superposition (summation) of T sub-frames within a unit integration time of the video camera.  
 It overcomes space-time tradeoff using pre-pixel coded exposure pattern.  
 For better reconstruction, there are restrictions on the coded exposure pattern. However, here we have assumed a symmetric bernoulli distribution is used for the pattern (**C**).  
@@ -40,6 +40,10 @@ Experiment Setup | Coded Snapshot | Reconstructed (left) Original (right)
 `flame.avi` with T = 3 | ![Coded Snapshot](results/flame_3_coded_snapshot.jpg "Coded Snapshot") | ![Reconstructed (left) Original (right)](results/flame_3.gif "Reconstructed (left) Original (right)")
 `flame.avi` with T = 5 | ![Coded Snapshot](results/flame_5_coded_snapshot.jpg "Coded Snapshot") | ![Reconstructed (left) Original (right)](results/flame_5.gif "Reconstructed (left) Original (right)")
 `flame.avi` with T = 7 | ![Coded Snapshot](results/flame_7_coded_snapshot.jpg "Coded Snapshot") | ![Reconstructed (left) Original (right)](results/flame_7.gif "Reconstructed (left) Original (right)")
+
+## Conclusions
+
+We achieve 3x, 5x and 7x gain in temporal resolution, with significantly less loss than a traditional system by using inter-frame redundancies to our advantage.
 
 ---
 
