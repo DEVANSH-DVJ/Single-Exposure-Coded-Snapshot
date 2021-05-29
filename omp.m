@@ -13,7 +13,7 @@ function theta = omp(A, y, e)
     [N, K] = size(A);   % N:dim of signal, K:#atoms in dictionary
     theta = zeros(K,1); % coefficient (output)
     r = y;              % residual of y
-    T = [];             % support set
+    T = zeros(1,K);             % support set
     i = 0;              % iteration
     A_omega = [];       % Sub-matrix of A containing columns which lie in the support set
 
@@ -37,7 +37,7 @@ function theta = omp(A, y, e)
         x_tmp = AN' * r;
         % Choose the next column
         [~,j] = max(abs(x_tmp));
-        T = [T j];
+        T(i) = j;
         A_omega = [A_omega A(:,j)];
 
         % Using pseudo-inverse of A_omega
@@ -47,7 +47,9 @@ function theta = omp(A, y, e)
     end
 
     %% Final output
-    for j=1:i
-        theta(T(j)) = theta_s(j);
-    end
+    % for j=1:i
+    %     theta(T(j)) = theta_s(j);
+    % end
+    theta(T(1:i)) = theta_s;
+
 end
