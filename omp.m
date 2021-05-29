@@ -17,18 +17,24 @@ function theta = omp(A, y, e)
     i = 0;              % iteration
     A_omega = [];       % Sub-matrix of A containing columns which lie in the support set
 
+    AN = A;
+    for j=1:K
+        AN(:,j) = AN(:,j) / norm(AN(:,j));
+    end
+
     %% Iteratively converge
     while(i < N && norm(r)^2 > e)
         i = i + 1;
-        x_tmp = zeros(K,1);
+        % x_tmp = zeros(K,1);
 
         % Iterate all columns except for the chosen ones
-        indices = setdiff(1:K, T);
-        for ind=indices
-            % Solution of min ||a'x-b||
-            x_tmp(ind) = A(:,ind)' * r / norm(A(:,ind));
-        end
+        % indices = setdiff(1:K, T);
+        % for ind=indices
+        %     % Solution of min ||a'x-b||
+        %     x_tmp(ind) = A(:,ind)' * r / norm(A(:,ind));
+        % end
 
+        x_tmp = AN' * r;
         % Choose the next column
         [~,j] = max(abs(x_tmp));
         T = [T j];
