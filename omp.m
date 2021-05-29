@@ -35,7 +35,8 @@ function theta = omp(A, y, e)
         A_omega = [A_omega A(:,j)];
 
         % Using pseudo-inverse of A_omega
-        theta_s = pinv(A_omega) * y;
+        % theta_s = pinv(A_omega) * y;
+        theta_s = A_omega \ y;
         r = y - A_omega * theta_s;
     end
 
